@@ -1,12 +1,12 @@
-# My Apps & Software
+## My Apps & Software List
 
-## Creative
+### Creative
 
 - **DaVinci Resolve** — Video editing
 - **Affinity** — Photo/graphic editing
 - **OBS Studio** — Screen recording & streaming
 
-## QOL & Utilities
+### QOL & Utilities
 
 - **[Flow Launcher](/Windows/Flow%20Launcher.md)** — Spotlight-style app launcher
 - **ShareX** — Screenshots & screen recording
@@ -22,11 +22,15 @@
 - **Sefirah** — Phone Link alternative
 - **Spacedesk** — Turn other devices for additional display
 
-## Other
+### System Tweaks
+
+- **[MSI Afterburner](/Windows/MSI%20Afterburner/)** — GPU tuning & hardware monitor
+- **[Registry Edit](/Windows/Regedit.md)** — Tweak system settings
+
+### Other
 
 - **YouTube Music PWA** — YTM web app
 - **VSCodium** — VSCode without telemetry
 - **Prism Launcher** — Minecraft launcher
 - **Zen** — Firefox-based browser
 - **Brave** — Chromium-based browser as a backup
-- **[MSI Afterburner](/Windows/MSI%20Afterburner/)** — GPU tuning & hardware monitor
