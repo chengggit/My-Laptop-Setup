@@ -1,0 +1,15 @@
+# Mods List
+- Better file sizes in Explorer details
+    -  with **Everything** integration
+- Better taskbar autohide
+- Disable grouping on the taskbar
+- Slick Window Arrangement
+- Taskbar Clock Customization
+- Taskbar height and icon size
+- Taskbar tray system icon tweaks
+- Taskbar Volume Control
+- Translucent Windows
+    - Ignore mod inclusion/exclusion list enabled
+- Windows 11 Notification Styler
+- Windows 11 Taskbar Styler
+- Windows 11 Start Menu Styler 

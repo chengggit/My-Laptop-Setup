@@ -1,0 +1,249 @@
+theme: ""
+disableNewStartMenuLayout: "1"
+styleConstants:
+  - ""
+controlStyles:
+  - target: Button#CloseAllAppsButton
+    styles:
+      - CornerRadius=14
+      - Margin=0,0,-32,0
+      - Width=74
+      - Height=26
+  - target: Grid#ShowMoreSuggestions
+    styles:
+      - Visibility=1
+  - target: Grid#SuggestionsParentContainer
+    styles:
+      - Visibility=1
+  - target: Grid#TopLevelSuggestionsListHeader
+    styles:
+      - Visibility=1
+  - target: Button#ShowAllAppsButton
+    styles:
+      - CornerRadius=14
+      - Margin=0,0,32,0
+      - Width=148
+      - Height=26
+  - target: StartDocked.SearchBoxToggleButton
+    styles:
+      - Margin=30,0,31,28
+  - target: PipsPager#PinnedListPipsPager
+    styles:
+      - Visibility=1
+  - target: Border#AcrylicBorder
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" FallbackColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0" TintLuminosityOpacity="0.01" Opacity="1"/>
+      - CornerRadius=60
+      - BorderBrush:=<AcrylicBrush TintColor="{ThemeResource SurfaceStrokeColorDefault}" FallbackColor="{ThemeResource SurfaceStrokeColorDefault}" TintOpacity="0" TintLuminosityOpacity=".25" Opacity="1"/>
+      - BorderThickness=1
+  - target: Grid#MainContent
+    styles:
+      - CornerRadius=60
+  - target: StartMenu.PinnedList
+    styles:
+      - Height=690
+  - target: TextBlock#DisplayName
+    styles:
+      - Margin=0,19,0,-16
+      - FontSize=12
+      - FontFamily=Aptos
+      - Opacity=.98
+  - target: TextBlock#PinnedListHeaderText
+    styles:
+      - Margin=-29,0,0,0
+      - FontFamily=Aptos
+      - Opacity=.85
+      - FontSize=16
+  - target: Border#TaskbarSearchBackground
+    styles:
+      - Visibility=1
+  - target: Border#AppBorder
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" FallbackColor="#FFFFFF" TintOpacity="0" TintLuminosityOpacity=".05" Opacity="1"/>
+      - BorderBrush:=<AcrylicBrush TintColor="#FFFFFF" FallbackColor="#FFFFFF" TintOpacity="0" TintLuminosityOpacity=".05" Opacity="1"/>
+      - CornerRadius=60
+  - target: Border#dropshadow
+    styles:
+      - CornerRadius=60
+  - target: Cortana.UI.Views.RichSearchBoxControl#SearchBoxControl
+    styles:
+      - Margin=33,33,33,10
+  - target: TextBlock#UserTileNameText
+    styles:
+      - Visibility=1
+  - target: TextBlock#AllAppsHeading
+    styles:
+      - FontFamily=Aptos
+      - Margin=-32,0,0,0
+      - FontSize=16
+      - Opacity=.85
+  - target: Border#ContentBorder
+    styles:
+      - CornerRadius=6
+  - target: GridViewItem > Border#ContentBorder > Grid#DroppedFlickerWorkaroundWrapper > Border#BackgroundBorder
+    styles:
+      - FocusVisualPrimaryThickness=0
+  - target: StartDocked.SearchBoxToggleButton > Grid > ContentPresenter > TextBlock#PlaceholderText
+    styles:
+      - Text=Search
+      - FontWeight=700
+      - FontFamily=Aptos
+      - FontSize=24
+      - Foreground:=<SolidColorBrush Color="{ThemeResource FocusStrokeColorOuter}" Opacity=".85"/>
+      - Margin=10,0,0,0
+  - target: StartDocked.SearchBoxToggleButton > Grid > Border
+    styles:
+      - Background=transparent
+      - BorderBrush=transparent
+  - target: StartDocked.SearchBoxToggleButton > Grid > FontIcon
+    styles:
+      - Transform3D:=<CompositeTransform3D  TranslateX="165" TranslateY="-1"/>
+      - Foreground:=<SolidColorBrush Color="{ThemeResource FocusStrokeColorOuter}" FallbackColor="{ThemeResource FocusStrokeColorOuter}" Opacity=".85"/>
+      - FontSize=24
+  - target: Grid#TopLevelRoot
+    styles:
+      - Margin=0,-8,0,0
+  - target: GridViewItem
+    styles:
+      - Height=96
+      - Margin=0,0,0,2
+  - target: StartDocked.UserTileView
+    styles:
+      - Margin=512,-1290,-2000,0
+  - target: StartDocked.UserTileView > StartDocked.NavigationPaneButton > Grid > Border
+    styles:
+      - CornerRadius=99
+      - Margin=8,0,8,0
+  - target: StartDocked.PowerOptionsView
+    styles:
+      - Margin=-64,-1290,-2000,0
+      - CornerRadius=99
+      - Opacity=.85
+  - target: TextBlock#ShowAllAppsButtonText
+    styles:
+      - FontFamily=Aptos
+      - Opacity=.85
+  - target: Button#CloseAllAppsButton > ContentPresenter > StackPanel > TextBlock
+    styles:
+      - FontFamily=Aptos
+      - Opacity=.85
+  - target: Border#AcrylicOverlay
+    styles:
+      - Visibility=1
+  - target: Grid#AllAppsPaneHeader
+    styles:
+      - Margin=64,-8,64,0
+  - target: Grid#InnerContent
+    styles:
+      - Margin=0,31,0,-64
+  - target: TextBlock#AppDisplayName
+    styles:
+      - FontFamily=Aptos
+      - Opacity=.85
+      - Margin=4,0,0,0
+  - target: Button#Header > Border > TextBlock
+    styles:
+      - FontFamily=Aptos
+      - FontWeight=600
+      - Opacity=.85
+  - target: StartDocked.PowerOptionsView > StartDocked.NavigationPaneButton > Grid > Border
+    styles:
+      - CornerRadius=60
+      - Margin=1
+  - target: TileGrid
+    styles:
+      - CornerRadiusProtected=8
+      - BorderThicknessProtected=1
+  - target: ListViewItem
+    styles:
+      - Margin=1,0,-6,0
+      - CornerRadius=4
+  - target: Button#Header
+    styles:
+      - Margin=4,0,-3,0
+  - target: StartDocked.AllAppsPane#AllAppsPanel
+    styles:
+      - Margin=-20,0,-6,0
+  - target: TextBlock#PlaceholderTextContentPresenter
+    styles:
+      - FontFamily=Aptos
+      - FontSize=24
+      - FontWeight=700
+      - Foreground:=<SolidColorBrush Color="{ThemeResource FocusStrokeColorOuter}" FallbackColor="{ThemeResource FocusStrokeColorOuter}" Opacity=".7"/>
+  - target: Microsoft.UI.Xaml.Controls.AnimatedIcon#SearchIconPlayer
+    styles:
+      - Visibility=1
+  - target: Button#SearchGlyphContainer
+    styles:
+      - FontSize=32
+      - Visibility=1
+  - target: Cortana.UI.Views.CortanaRichSearchBox#SearchTextBox
+    styles:
+      - FontSize=24
+      - Foreground:=<SolidColorBrush Color="{ThemeResource TextFillColorPrimary}" FallbackColor="{ThemeResource TextFillColorPrimary}" Opacity=".85"/>
+      - FontFamily=Aptos
+      - Opacity=.85
+      - FontWeight=ExtraBold
+  - target: Border#LayerBorder
+    styles:
+      - Visibility=1
+  - target: Windows.UI.Xaml.Controls.FontIcon#SearchBoxOnTaskbarSearchGlyph
+    styles:
+      - Visibility=0
+      - Margin=0
+      - FontSize=32
+      - Opacity=.85
+  - target: Cortana.UI.Views.RichSearchBoxControl#SearchBoxControl
+    styles:
+      - Margin=25,32,25,13
+  - target: Grid#WebViewGrid > WebView
+    styles:
+      - Margin=-3,0,0,0
+  - target: TextBlock#StatusMessage
+    styles:
+      - Visibility=1
+  - target: Border#LogoBackgroundPlate
+    styles:
+      - Margin=12,0,0,0
+  - target: Grid#WebViewGrid
+    styles:
+      - CornerRadius=0,0,12,0
+  - target: Border#DropShadow
+    styles:
+      - CornerRadius=60
+  - target: Border#DropShadowDismissTarget
+    styles:
+      - CornerRadius=12
+  - target: Windows.UI.Xaml.Controls.FlyoutPresenter[1]
+    styles:
+      - Margin=-250,50,0,0
+  - target: StartDocked.LauncherFrame > Grid#RootGrid > Grid#RootContent > Grid#MainContent > Grid#InnerContent > Rectangle
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.FlyoutPresenter
+    styles:
+      - Margin=-250,0,0,0
+  - target: StartDocked.SearchBoxToggleButton > Grid > FontIcon#SearchGlyph
+    styles:
+      - Margin=0,-3,0,0
+      - FontSize=25
+      - Foreground:=<SolidColorBrush Color="{ThemeResource FocusStrokeColorOuter}" Opacity=".85"/>
+  - target: StartMenu.ExpandedFolderList > Grid#Root > Border
+    styles:
+      - Height=420
+  - target: TextBox#ExpandedFolderNameTextBox
+    styles:
+      - Margin=-15,-15,15,20
+  - target: Windows.UI.Xaml.Controls.GridView#FolderList > Border
+    styles:
+      - Margin=0,0,0,-60
+themeResourceVariables:
+  - ""
+webContentStyles:
+  - target: ""
+    styles:
+      - ""
+webContentCustomJs: ""
+resourceVariables:
+  - variableKey: ""
+    value: ""

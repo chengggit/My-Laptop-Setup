@@ -1,0 +1,129 @@
+theme: TranslucentShell
+controlStyles:
+  - target: Grid#NotificationCenterGrid
+    styles:
+      - Shadow:=True
+  - target: Grid#CalendarCenterGrid
+    styles:
+      - Shadow:=True
+  - target: Grid#MediaTransportControlsRegion
+    styles:
+      - Shadow:=True
+  - target: Grid#ControlCenterRegion
+    styles:
+      - Shadow:=True
+  - target: Grid#ThumbnailImage
+    styles:
+      - CornerRadius=6
+      - Grid.Column=0
+      - Margin=0,0,0,0
+      - Height=135
+      - Width=135
+  - target: StackPanel#PrimaryAndSecondaryTextContainer
+    styles:
+      - Margin=160,-10,0,0
+  - target: Windows.UI.Xaml.Controls.ListView#MediaButtonsListView
+    styles:
+      - HorizontalAlignment=2
+      - VerticalAlignment=0
+      - Margin=60,-30,-10,0
+  - target: Grid#MediaTransportControlsRegion
+    styles:
+      - Height=192
+  - target: Windows.UI.Xaml.Controls.Image#IconImage
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.TextBlock#AppNameText
+    styles:
+      - Margin=160,0,0,-40
+  - target: Grid#NotificationCenterGrid
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" TintLuminosityOpacity="0" TintOpacity="0.05" Opacity="1" FallbackColor="#FFFFFF"/>
+      - BorderThickness=0,0,0,0
+      - CornerRadius=30
+  - target: Grid#CalendarCenterGrid
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" TintLuminosityOpacity="0" TintOpacity="0.05" Opacity="1" FallbackColor="#FFFFFF"/>
+      - BorderThickness=0,0,0,0
+      - CornerRadius=30
+  - target: ScrollViewer#CalendarControlScrollViewer
+    styles:
+      - Background:=<AcrylicBrush Opacity="0"/>
+  - target: Border#CalendarHeaderMinimizedOverlay
+    styles:
+      - Background:=<AcrylicBrush Opacity="0"/>
+  - target: ActionCenter.FocusSessionControl#FocusSessionControl > Grid#FocusGrid
+    styles:
+      - Background:=<AcrylicBrush Opacity="0"/>
+  - target: MenuFlyoutPresenter
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" TintLuminosityOpacity="0" TintOpacity="0.05" Opacity="1" FallbackColor="#FFFFFF"/>
+      - BorderThickness=0,0,0,0
+      - CornerRadius=30
+      - Padding=2,4,2,4
+  - target: Border#JumpListRestyledAcrylic
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" TintLuminosityOpacity="0" TintOpacity="0.05" Opacity="1" FallbackColor="#FFFFFF"/>
+      - BorderThickness=0,0,0,0
+      - CornerRadius=30
+      - Margin=-2,-2,-2,-2
+  - target: Grid#ControlCenterRegion
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" TintLuminosityOpacity="0" TintOpacity="0.05" Opacity="1" FallbackColor="#FFFFFF"/>
+      - BorderThickness=0,0,0,0
+      - CornerRadius=30
+  - target: Windows.UI.Xaml.Controls.Grid#L1Grid > Border
+    styles:
+      - Background:=<SolidColorBrush Color="Transparent"/>
+  - target: Windows.UI.Xaml.Controls.Grid#MediaTransportControlsRegion
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" TintLuminosityOpacity="0" TintOpacity="0.05" Opacity="1" FallbackColor="#FFFFFF"/>
+      - BorderThickness=0,0,0,0
+      - CornerRadius=30
+  - target: Grid#MediaTransportControlsRoot
+    styles:
+      - Background:=<SolidColorBrush Color="Transparent"/>
+  - target: ContentPresenter#PageContent
+    styles:
+      - Background:=<SolidColorBrush Color="Transparent"/>
+  - target: ContentPresenter#PageContent > Grid > Border
+    styles:
+      - Background:=<SolidColorBrush Color="Transparent"/>
+  - target: QuickActions.ControlCenter.AccessibleWindow#PageWindow > ContentPresenter > Grid#FullScreenPageRoot
+    styles:
+      - Background:=<SolidColorBrush Color="Transparent"/>
+  - target: QuickActions.ControlCenter.AccessibleWindow#PageWindow > ContentPresenter > Grid#FullScreenPageRoot > ContentPresenter#PageHeader
+    styles:
+      - Background:=<SolidColorBrush Color="Transparent"/>
+  - target: ScrollViewer#ListContent
+    styles:
+      - Background:=<SolidColorBrush Color="Transparent"/>
+  - target: ActionCenter.FlexibleToastView#FlexibleNormalToastView
+    styles:
+      - Background:=<SolidColorBrush Color="Transparent"/>
+  - target: Border#ToastBackgroundBorder2
+    styles:
+      - Background:=<AcrylicBrush TintColor="#FFFFFF" TintLuminosityOpacity="0" TintOpacity="0.05" Opacity="1" FallbackColor="#FFFFFF"/>
+      - BorderThickness=0,0,0,0
+      - CornerRadius=6
+      - Shadow:=
+  - target: JumpViewUI.SystemItemListViewItem > Grid#LayoutRoot > Border#BackgroundBorder
+    styles:
+      - FocusVisualPrimaryThickness=0,0,0,0
+      - FocusVisualSecondaryThickness=0,0,0,0
+  - target: JumpViewUI.JumpListListViewItem > Grid#LayoutRoot > Border#BackgroundBorder
+    styles:
+      - FocusVisualPrimaryThickness=0,0,0,0
+  - target: ActionCenter.FlexibleItemView
+    styles:
+      - CornerRadius=6
+  - target: ActionCenter.FocusSessionControl
+    styles:
+      - Height=0
+styleConstants:
+  - ''
+themeResourceVariables:
+  - ''
+resourceVariables:
+  - variableKey: ''
+    value: ''

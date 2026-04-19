@@ -1,0 +1,315 @@
+[Master]
+Implementation=2
+FontFace=Open Sans
+FontHeight=-9
+FontWeight=400
+ZoomRatio=2
+[Settings]
+Name=
+EnvVars=
+RefreshPeriod=1000
+EmbeddedImage=
+PingAddr=
+[General]
+Sources=14
+Tables=0
+Layers=19
+[Source0]
+Name=GPU1 temperature
+Units=°C
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000000
+Gpu=00000000
+SrcName=
+[Source1]
+Name=GPU1 usage
+Units=%
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000030
+Gpu=00000000
+SrcName=
+[Source2]
+Name=GPU1 core clock
+Units=MHz
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000020
+Gpu=00000000
+SrcName=
+[Source3]
+Name=GPU1 power
+Units=W
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000061
+Gpu=00000000
+SrcName=
+[Source4]
+Name=GPU1 memory usage
+Units=MB
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000031
+Gpu=00000000
+SrcName=
+[Source5]
+Name=GPU1 memory clock
+Units=MHz
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000022
+Gpu=00000000
+SrcName=
+[Source6]
+Name=CPU temperature
+Units=°C
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000080
+Gpu=FFFFFFFF
+SrcName=
+[Source7]
+Name=CPU usage
+Units=%
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000090
+Gpu=FFFFFFFF
+SrcName=
+[Source8]
+Name=CPU clock
+Units=MHz
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=000000A0
+Gpu=FFFFFFFF
+SrcName=
+[Source9]
+Name=CPU power
+Units=W
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000100
+Gpu=FFFFFFFF
+SrcName=
+[Source10]
+Name=RAM usage
+Units=MB
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000091
+Gpu=00000000
+SrcName=
+[Source11]
+Name=Framerate
+Units=FPS
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000050
+Gpu=FFFFFFFF
+SrcName=
+[Source12]
+Name=Frametime
+Units=ms
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000051
+Gpu=FFFFFFFF
+SrcName=
+[Source13]
+Name=Framerate 1% Low
+Units=FPS
+Format=
+Formula=
+Provider=MSI Afterburner
+SrcId=00000055
+Gpu=FFFFFFFF
+SrcName=
+[Layer0]
+Name=CPU TEMP
+Text=%CPU temperature%<S=75> °C<S>
+PositionX=-4
+PositionY=0
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer1]
+Name=CPU Usage
+Text=%CPU usage%<S=75> %<S>
+PositionX=-16
+PositionY=0
+ExtentX=-1
+ExtentY=-1
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer2]
+Name=CPU POWER
+Text=%CPU power%<S=75> W<S>
+PositionX=-20
+PositionY=0
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer3]
+Name=
+Text=%CPU clock%<S=75> MHz<S>
+PositionX=-8
+PositionY=0
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer4]
+Name=
+Text=%GPU1 temperature% °C
+PositionX=-4
+PositionY=-1
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer5]
+Name=
+Text=%GPU1 core clock%<S=75> MHz<S>
+PositionX=-8
+PositionY=-1
+ExtentX=-5
+ExtentY=-1
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer6]
+Name=
+Text=%GPU1 power%<S=75> W<S>
+PositionX=-20
+PositionY=-1
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer7]
+Name=
+Text=%GPU1 usage%<S=75> %<S>
+PositionX=-16
+PositionY=-1
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer8]
+Name=
+Text=CPU
+PositionX=0
+PositionY=0
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=8CD2EC
+[Layer9]
+Name=
+Text=GPU
+PositionX=0
+PositionY=-1
+ExtentX=-1
+ExtentY=-1
+ExtentOrigin=0
+TextColor=8CD2EC
+[Layer10]
+Name=
+Text=%Time24%
+PositionX=-24
+PositionY=0
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+FixedAlignment=1
+TextColor=FFFFFF
+[Layer11]
+Name=
+Text=%Framerate%<S=75>  FPS<S>
+PositionX=-8
+PositionY=-3
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer12]
+Name=
+Text=<API>
+PositionX=0
+PositionY=-3
+ExtentX=-2
+ExtentY=-1
+ExtentOrigin=0
+TextColor=8CD2EC
+[Layer13]
+Name=
+Text=<G=Frametime>
+PositionX=0
+PositionY=-4
+ExtentX=-6
+ExtentY=-2
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer14]
+Name=
+Text=%Framerate 1% Low%<S=75> FPS<S>
+PositionX=-14
+PositionY=-3
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer15]
+Name=
+Text=%GPU1 memory usage%<S=75> MB<S>
+PositionX=-16
+PositionY=-2
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+FixedAlignment=1
+TextColor=FFFFFF
+[Layer16]
+Name=
+Text=%GPU1 memory clock%<S=75> MHz<S>
+PositionX=-8
+PositionY=-2
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=FFFFFF
+[Layer17]
+Name=
+Text=%RAM usage%<S=75> MB<S>
+PositionX=-24
+PositionY=-2
+ExtentX=-5
+ExtentY=-1
+ExtentOrigin=0
+TextColor=8CD2EC
+[Layer18]
+Name=
+Text=<FT> ms
+PositionX=-19
+PositionY=-3
+ExtentX=0
+ExtentY=0
+ExtentOrigin=0
+TextColor=8CD2EC

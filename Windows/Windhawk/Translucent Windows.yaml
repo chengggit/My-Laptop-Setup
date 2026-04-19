@@ -1,0 +1,56 @@
+RenderingMod:
+  ThemeBackground: 0
+  SysColors: 0
+  AccentColorControls: 0
+  TextAlphaBlend: 0
+type: acrylicblur
+AccentBlurBehind: "000000"
+FlyoutsEffects: 1
+ImmersiveDarkTitle: 1
+ExtendFrame: 1
+CornerOption: default
+RainbowSpeed: 1
+TitlebarColor:
+  ColorTitlebar: 0
+  RainbowTitlebar: 0
+  titlerbarstyles_active: ""
+  titlerbarstyles_inactive: ""
+TitlebarTextColor:
+  ColorTitlebarText: 0
+  RainbowTextColor: 0
+  titlerbarcolorstyles_active: ""
+  titlerbarcolorstyles_inactive: ""
+BorderColor:
+  ColorBorder: 0
+  RainbowBorder: 0
+  borderstyles_active: "0"
+  borderstyles_inactive: "0"
+  MenuBorderColor: 0
+RuledPrograms:
+  - target: Spotify.exe
+    RenderingMod:
+      ThemeBackground: 0
+      AccentColorControls: 0
+    type: acrylicblur
+    AccentBlurBehind: ""
+    ImmersiveDarkTitle: 1
+    ExtendFrame: 1
+    CornerOption: ""
+    RainbowSpeed: 0
+    TitlebarColor:
+      ColorTitlebar: 0
+      RainbowTitlebar: 0
+      titlerbarstyles_active: ""
+      titlerbarstyles_inactive: ""
+    TitlebarTextColor:
+      ColorTitlebarText: 0
+      RainbowTextColor: 0
+      titlerbarcolorstyles_active: ""
+      titlerbarcolorstyles_inactive: ""
+    BorderColor:
+      ColorBorder: 0
+      RainbowBorder: 0
+      borderstyles_active: ""
+      borderstyles_inactive: ""
+TextAlphaBlend: 1
+ThemeBackground: 1

@@ -1,0 +1,65 @@
+ShowSeconds: 0
+TimeFormat: HH':'mm'
+DateFormat: ddd dd MMM
+WeekdayFormat: dddd
+WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
+TopLine: ""
+BottomLine: "%date% | %time%  "
+MiddleLine: "%weekday%"
+TooltipLine: "%web1_full%"
+TooltipLineMode: append
+Width: 180
+Height: 60
+MaxWidth: 0
+TextSpacing: 4
+DataCollection:
+  NetworkMetricsFormat: mbs
+  NetworkMetricsFixedDecimals: -1
+  PercentageFormat: spacePaddingAndSymbol
+  UpdateInterval: 1
+  NetworkAdapterName: ""
+  GpuAdapterName: ""
+MediaPlayer:
+  IgnoredPlayers:
+    - ""
+  MaxLength: 28
+  NoMediaText: ""
+  RemoveBrackets: 0
+WebContentWeatherLocation: ""
+WebContentWeatherFormat: "%c 🌡️%t 🌬️%w"
+WebContentWeatherUnits: autoDetect
+WebContentsItems:
+  - Url: https://feeds.bbci.co.uk/news/world/rss.xml
+    BlockStart: <item>
+    Start: <title><![CDATA[
+    End: "]]></title>"
+    ContentMode: ""
+    SearchReplace:
+      - Search: ""
+        Replace: ""
+    MaxLength: 28
+WebContentsUpdateInterval: 10
+TimeZones:
+  - Eastern Standard Time
+TimeStyle:
+  Hidden: 1
+  TextColor: Black
+  TextAlignment: ""
+  FontSize: 0
+  FontFamily: ""
+  FontWeight: ""
+  FontStyle: ""
+  FontStretch: ""
+  CharacterSpacing: 0
+  Visible: 0
+DateStyle:
+  Hidden: 0
+  TextColor: White
+  TextAlignment: ""
+  FontSize: 12
+  FontFamily: JetBrainsMono NF
+  FontWeight: SemiBold
+  FontStyle: ""
+  FontStretch: ""
+  CharacterSpacing: 0
+oldTaskbarOnWin11: 0
