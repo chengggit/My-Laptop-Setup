@@ -20,7 +20,7 @@
 - **Syncthing** — Cross-device file sync
 - **LocalSend** — Local file sharing
 - **Sefirah** — Phone Link alternative
-- **Spacedesk** — Turn other devices for additional display
+- **Spacedesk** — Turn other devices to an additional display
 
 ### System Tweaks
 
