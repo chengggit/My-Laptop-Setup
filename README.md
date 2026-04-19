@@ -1,6 +1,6 @@
 # My Laptop Setup
 
-A reference repo for my whole laptop setup — apps, customizations, and hardware tweaks like GPU OC and undervolting. Mostly for backup and documentation purposes, and to help with my eventual Linux migration.
+A reference repo for my whole laptop setup — apps, customizations, and hardware tweaks like GPU overclock and undervolt. Mostly for backup and documentation purposes, and to help with my eventual Linux migration.
 
 ## Specs
 
