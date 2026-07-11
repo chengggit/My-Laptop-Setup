@@ -1,0 +1,7 @@
+{
+    "version": "2.2.0",
+    "autoload": {
+        "Acer WMI hotkeys": "new preset",
+        "AT Translated Set 2 keyboard": "Nitrosense"
+    }
+}

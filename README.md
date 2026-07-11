@@ -1,6 +1,6 @@
 # My Laptop Setup
 
-A reference repo for my whole laptop setup — apps, customizations, and hardware tweaks like GPU overclock and undervolt. Mostly for backup and documentation purposes, and to help with my eventual Linux migration.
+A reference repo for my whole laptop setup — apps, customizations, and hardware tweaks like GPU overclock and undervolt. Mostly for backup and documentation purposes.
 
 ## Specs
 
@@ -12,6 +12,7 @@ A reference repo for my whole laptop setup — apps, customizations, and hardwar
 
 ## Contents
 
+- [Linux](dotfiles/)
 - [Windows](Windows/)
   - [Apps](Windows/README.md)
   - [System Tweaks](Windows/README.md#system-tweaks)

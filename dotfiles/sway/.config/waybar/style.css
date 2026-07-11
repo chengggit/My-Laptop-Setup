@@ -1,0 +1,165 @@
+/* Everforest Dark Colors */
+@define-color background #1E2326;
+@define-color background-light #323c41;
+@define-color foreground #d3c6aa;
+@define-color red #e67e80;
+@define-color green #a7c080;
+@define-color gray #7a8478;
+
+/* Module-specific colors */
+@define-color workspaces-color @foreground;
+@define-color workspaces-focused-bg @green;
+@define-color workspaces-focused-fg @green;
+@define-color workspaces-urgent-bg @red;
+@define-color workspaces-urgent-fg black;
+
+@define-color mode-color @foreground;
+@define-color weather-color @foreground;
+
+@define-color playerctl-color @foreground;
+@define-color playerctl-color-playing @green;
+@define-color playerctl-color-paused @gray;
+
+@define-color clock-color @foreground;
+@define-color battery-color @foreground;
+@define-color battery-charging-color @green;
+@define-color battery-warning-color @foreground;
+@define-color battery-critical-color @red;
+@define-color network-color @foreground;
+@define-color network-disconnected-color @gray;
+@define-color pulseaudio-color @foreground;
+@define-color pulseaudio-muted-color @foreground;
+@define-color backlight-color @foreground;
+
+* {
+  /* Base styling for all modules */
+  border: 0;
+  border-radius: 0;
+  font-family: "AdwaitaMono Nerd Font";
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: @background;
+  color: @foreground;
+}
+
+#mode,
+#custom-weather,
+#custom-playerctl,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#tray {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: transparent;
+}
+
+/* Workspaces styling */
+#workspaces button {
+  padding: 0 10px;
+  background-color: transparent;
+  color: @workspaces-color;
+  margin: 0;
+  border: 0;
+}
+
+#workspaces button:hover {
+  background: @background-light;
+  box-shadow: inherit;
+  border: 0;
+}
+
+#workspaces button.focused {
+  box-shadow: inset 0 -2px @workspaces-focused-fg;
+  color: @workspaces-focused-fg;
+  font-weight: 900;
+  border: 0;
+}
+
+#workspaces button.urgent {
+  background-color: @workspaces-urgent-bg;
+  color: @workspaces-urgent-fg;
+  border: 0;
+}
+
+/* Module-specific styling */
+#mode {
+  color: @mode-color;
+}
+
+#custom-weather {
+  color: @weather-color;
+}
+
+#custom-playerctl {
+  color: @playerctl-color;
+}
+
+#custom-playerctl.Playing {
+  color: @playerctl-color-playing;
+}
+
+#custom-playerctl.Paused {
+  color: @playerctl-color-paused;
+}
+
+#clock {
+  color: @clock-color;
+}
+
+#battery {
+  color: @battery-color;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @battery-charging-color;
+}
+
+#battery.warning:not(.charging) {
+  color: @battery-warning-color;
+}
+
+#battery.critical:not(.charging) {
+  color: @battery-critical-color;
+}
+
+#network {
+  color: @network-color;
+}
+
+#network.disconnected {
+  color: @network-disconnected-color;
+}
+
+#pulseaudio {
+  color: @pulseaudio-color;
+}
+
+#pulseaudio.muted {
+  color: @pulseaudio-muted-color;
+}
+
+#backlight {
+  color: @backlight-color;
+}
+
+#tray {
+  background-color: transparent;
+  padding: 0 10px;
+  margin: 0 2px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  color: @red;
+}

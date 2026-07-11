@@ -1,0 +1,98 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 1,
+  "margin": 0,
+  "modules-left": ["sway/workspaces", "sway/mode", "custom/weather"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "custom/playerctl",
+    "pulseaudio",
+    "backlight",
+    "network",
+    "battery",
+    "tray",
+  ],
+
+  "sway/workspaces": {
+    "all-outputs": true,
+    "format": "{name}",
+  },
+
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>",
+  },
+
+  "custom/playerctl": {
+    "format": " 󰐊 {}",
+    "return-type": "json",
+    "max-length": 40,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{artist}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause",
+  },
+
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/?format=1'",
+    "interval": 3600,
+    "format": "{}",
+    "tooltip": true,
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "{:%Y-%m-%d %H:%M:%S}",
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
+
+  "network": {
+    "format-wifi": "󰖩 {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󰖪 Disconnected",
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "󰂰 {volume}%",
+    "format-bluetooth-muted": "󰂲 {icon}",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰥰",
+      "headset": "󰋎",
+      "phone": "󰏲",
+      "portable": "󰄝",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 5,
+  },
+}
