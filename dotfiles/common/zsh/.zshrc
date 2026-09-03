@@ -1,25 +1,24 @@
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
 alias aespa="fastfetch"
 alias opencodeweb="OPENCODE_SERVER_PASSWORD=240224 opencode web --hostname 0.0.0.0 --port 4096"
 alias codedir="cd ~/Documents/Code"
 alias activatevenv="source .venv/bin/activate"
-alias fixacer="sudo ./damx-reinstall.sh"
+alias fixacer="sudo ./Scripts/damx-reinstall.sh"
+alias llm="./Scripts/llm.sh"
+
+alias sync-media="python3 ~/Scripts/sync-media.py"
+
+alias start-jelly='ssh "$PHONE_SSH" "sudo systemctl start jellyfin"'
+alias stop-jelly='ssh "$PHONE_SSH" "sudo systemctl stop jellyfin"'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -67,14 +66,9 @@ ZSH_THEME="robbyrussell"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
   fzf
@@ -108,20 +102,13 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=$PATH:/home/cheng/.spicetify
 
 # opencode
 export PATH=/home/cheng/.opencode/bin:$PATH
 
-# Hermes Agent — ensure ~/.local/bin is on PATH
 export PATH="$HOME/.local/bin:$PATH"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/cheng/.lmstudio/bin"
-# End of LM Studio CLI section
+# export PATH="$HOME/llama-cpp-turboquant/build/bin/:$PATH"
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"

@@ -35,7 +35,7 @@ set $sysmonitor btop
 
 ### Output configuration
 
-output * bg ~/Downloads/ fill
+output * bg /home/cheng/Pictures/2025-04-02_15.41.16.png fill
 output * mode 2560x1440@165.001Hz
 
 ### Idle configuration
@@ -70,7 +70,7 @@ input type:pointer {
 
 # Basics
     bindsym $mod+e exec $file
-    bindsym Ctrl+Mod1+equal exec ~/DAMX-0.9.1/DAMX-GUI/DivAcerManagerMax
+    bindsym Ctrl+Mod1+equal exec /home/cheng/Downloads/DAMX-0.9.1/DAMX-GUI/DivAcerManagerMax
     bindsym $mod+Return exec $term
     bindsym $mod+Escape exec $term $sysmonitor
 

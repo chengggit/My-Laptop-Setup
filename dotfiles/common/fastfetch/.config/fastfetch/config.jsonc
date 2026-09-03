@@ -1,0 +1,71 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/ffschema.txt",
+    "color": {
+      "1": "36"
+    },
+    "padding": {
+      "top": 2,
+      "right": 6,
+      "left": 4
+    }
+  },
+  "display": {
+    "separator": "",
+    "color": {
+      "keys": "cyan", 
+      "title": "cyan", 
+      "output": ""
+    },
+    "key": {
+      "width": 12
+    }
+  },
+  "modules": [
+    {
+      "type": "title"
+    },
+    {
+      "type": "custom",
+      "key": " "
+    },
+    {
+      "key": "{icon} distro",
+      "type": "os",
+      "format": "{name}"
+    },
+    {
+      "key": " kernel",
+      "type": "kernel"
+    },
+    {
+      "key": "󰇄 desktop",
+      "type": "de",
+      "format": "{pretty-name}"
+    },
+    {
+      "key": " shell",
+      "type": "shell"
+    },
+    {
+      "key": " term",
+      "type": "terminal"
+    },
+    {
+      "key": "󰍛 cpu",
+      "type": "cpu",
+      "format": "{name}"
+    },
+    {
+      "key": "󰢮 gpu ",
+      "type": "gpu",
+      "format": "{name}"
+    },
+    {
+      "key": "󰝚 media",
+      "type": "media",
+      "format": "{title} - {artist}"
+    }
+  ]
+}
