@@ -4,9 +4,9 @@ The [`termite.nvim/`](termite.nvim/) here is a custom version of the plugin [rui
 
 ## History
 
-2026-04-21: Nobara/KDE
-2026-07-06: Nobara/Sway
-2026-09-03: CachyOS/Niri w DankMaterialShell
+- 2026-04-21: Nobara/KDE
+- 2026-07-06: Nobara/Sway
+- 2026-09-03: CachyOS/Niri w DankMaterialShell
 
 ## Sway
 
@@ -15,4 +15,3 @@ Theme: Everforest Hard
 ## Niri
 
 Shell: DankMaterialShell
-
