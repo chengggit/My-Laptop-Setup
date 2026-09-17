@@ -113,7 +113,7 @@ M.get_win_config = function(index, total)
 
 		-- Every terminal has a bottom border row: separators between stacked terminals,
 		-- and an invisible (space) row for the last terminal.
-		local border_rows = total
+		local border_rows = math.max(0, total - 1)
 		local usable_height = editor_height - border_rows
 		local each_height = math.floor(usable_height / total)
 
@@ -146,7 +146,7 @@ M.get_win_config = function(index, total)
 
 	-- Every terminal has a right border column: separators between stacked terminals,
 	-- and an invisible (space) column for the last terminal.
-	local border_cols = total
+	local border_cols = math.max(0, total - 1)
 	local usable_width = editor_width - border_cols
 	local each_width = math.floor(usable_width / total)
 
