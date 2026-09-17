@@ -1,0 +1,393 @@
+*termite.txt*  Stacking float terminal manager for Neovim
+
+================================================================================
+CONTENTS                                                  *termite-contents*
+
+1. Introduction .................... |termite-introduction|
+2. Requirements .................... |termite-requirements|
+3. Installation .................... |termite-installation|
+4. Configuration ................... |termite-configuration|
+5. Keymaps ......................... |termite-keymaps|
+6. Commands ........................ |termite-commands|
+7. API ............................. |termite-api|
+8. Highlights ...................... |termite-highlights|
+
+================================================================================
+1. INTRODUCTION                                      *termite-introduction*
+
+termite.nvim is a stacking float terminal manager for Neovim. It provides
+vertically or horizontally stacked floating terminal windows, allowing you to
+manage multiple shell sessions with ease.
+
+Features:
+- Vertically stacked floating terminals on the left or right side
+- Horizontally stacked floating terminals on the top or bottom
+- Toggle all terminals (show/hide) with a single key
+- Create multiple terminals that automatically resize and reflow
+- Navigate between terminals (next/previous)
+- Maximize/restore individual terminals to full height/width
+- Tmux-like tab bar while maximized (key + mouse switching, dockable side)
+- Focus editor while keeping terminals visible, and focus back with a single key
+- Custom shell support
+- Full keymap customization
+- Border highlighting for single, active, and inactive terminals (outer edge only)
+- Winbar showing running process or cwd
+
+================================================================================
+2. REQUIREMENTS                                      *termite-requirements*
+
+- Neovim >= 0.7.0
+
+================================================================================
+3. INSTALLATION                                      *termite-installation*
+
+Using lazy.nvim (https://github.com/folke/lazy.nvim):
+>
+  {
+    "ruicsh/termite.nvim",
+    config = function()
+      require("termite").setup()
+    end,
+  }
+<
+
+================================================================================
+4. CONFIGURATION                                    *termite-configuration*
+
+termite.setup({config})                                    *termite-setup()*
+
+Configure the plugin with custom options.
+
+Parameters:
+  {config}  Table of configuration options (optional)
+
+Default configuration:
+>
+  {
+    width = 0.5,           -- Fraction of editor width for left/right positions
+    height = 0.5,          -- Fraction of editor height for top/bottom positions
+    position = "right",    -- Panel position: "left", "right", "top", or "bottom"
+    border = "light",      -- Border style name (see |termite-config-border|)
+    shell = nil,           -- Shell command (nil = $SHELL)
+    start_insert = true,   -- Enter insert mode when focusing terminal
+    click_to_insert = true, -- Enter insert mode when clicking terminal window
+    winbar = true,         -- Show winbar with running process or cwd
+
+    tabs = {
+      enabled = true,      -- Show tmux-like tab bar while maximized
+      position = "right",  -- Tab bar side: "top", "right", "bottom", or "left"
+      max_title_width = 20, -- Max display width for process title in tabs
+    },
+
+    keymaps = {
+      toggle = "<C-\\>",   -- Toggle all terminals
+      create = "<C-t>",    -- Create new terminal
+      next = "<C-n>",      -- Focus next terminal
+      prev = "<C-p>",      -- Focus previous terminal
+      focus_editor = "<C-e>",  -- Focus editor window
+      normal_mode = "<C-[>",   -- Exit to normal mode
+      maximize = "<C-z>",      -- Maximize/restore terminal
+      close = "q",             -- Close terminal (normal mode)
+      goto_1 = nil,            -- Jump to terminal 1 (e.g. "<A-1>")
+      goto_2 = nil,            -- Jump to terminal 2 (e.g. "<A-2>")
+      goto_3 = nil,            -- Jump to terminal 3 (e.g. "<A-3>")
+      goto_4 = nil,            -- Jump to terminal 4 (e.g. "<A-4>")
+      goto_5 = nil,            -- Jump to terminal 5 (e.g. "<A-5>")
+    },
+
+    wo = {
+      signcolumn = "yes:1",
+    },
+  }
+<
+
+Configuration options:
+
+*termite-config-width*
+width (number)
+  Fraction of editor width for the terminal panel (0.0 - 1.0).
+  Only applies when |termite-config-position| is "left" or "right".
+  Default: 0.5
+
+*termite-config-height*
+height (number)
+  Fraction of editor height for the terminal panel (0.0 - 1.0).
+  Only applies when |termite-config-position| is "top" or "bottom".
+  Default: 0.5
+
+*termite-config-position*
+position (string)
+  Panel position. One of "left", "right", "top", or "bottom".
+  Default: "right"
+
+*termite-config-border*
+border (string)
+  Border style name. One of:
+    - "light"           - Single line borders
+    - "heavy"           - Thick line borders
+    - "double"          - Double line borders
+    - "double-dash"     - Dashed lines, 2 dashes per segment
+    - "triple-dash"     - Dashed lines, 3 dashes per segment
+    - "quadruple-dash"  - Dashed lines, 4 dashes per segment
+  Default: "light"
+
+*termite-config-shell*
+shell (string|nil)
+  Shell command to use. nil uses the default $SHELL.
+  Default: nil
+
+*termite-config-start_insert*
+start_insert (boolean)
+  Whether to automatically enter insert mode when focusing a terminal.
+  Default: true
+
+*termite-config-click_to_insert*
+click_to_insert (boolean)
+  Whether to automatically enter insert mode when clicking a terminal
+  window.
+  Default: true
+
+*termite-config-winbar*
+winbar (boolean)
+  Whether to show a winbar displaying the running process (via b:term_title)
+  or the cwd when no process is running.
+  Default: true
+
+*termite-config-tabs*
+tabs (table)
+  Tmux-like tab bar shown while a terminal is maximized with 2+ terminals.
+  Each tab shows "[index] process" for every terminal; the selected tab is
+  highlighted. Switch tabs with the next/previous keymaps (they cycle the
+  maximized view) or by clicking a tab with the mouse. Creating a terminal
+  while maximized appends a tab and switches to it.
+  Closing the maximized terminal keeps the maximized view on a neighbor.
+  Fields:
+    - enabled: show the tab bar (boolean, default true)
+    - position: tab bar side, one of "top", "right", "bottom", "left"
+      (default "right")
+    - max_title_width: max display width for the process title (default 20)
+  Set to false or { enabled = false } to disable.
+
+*termite-config-keymaps*
+keymaps (table)
+  Buffer-local keymaps for terminal windows. Set to false to disable.
+  Additionally, `toggle` and `create` are available in normal mode globally.
+  See |termite-keymaps|.
+
+*termite-config-wo*
+wo (table)
+  Window options applied to terminal windows.
+  Default: { signcolumn = "yes:1" }
+
+*termite-config-highlights*
+highlights (table)
+  Highlight configuration for terminal borders.
+  Each value can be either a string (highlight group name) or a table
+  (direct highlight definition with fg, bg, etc.).
+
+  - border_single: Highlight for the single terminal's outer edge
+  - border_active: Highlight for the active terminal's outer edge (2+ terminals)
+  - border_inactive: Highlight for inactive terminals and corner characters
+  - winbar: Highlight for the winbar text
+  - tab_active: Highlight for the selected tab in the maximized tab bar
+  - tab_inactive: Highlight for unselected tabs in the maximized tab bar
+
+  The outer edge is the border facing the editor:
+    - position="right": left edge (index 8)
+    - position="left": right edge (index 4)
+    - position="top": bottom edge (index 6)
+    - position="bottom": top edge (index 2)
+
+  Default: {
+    border_single = "TermiteBorderSingle",
+    border_active = "TermiteBorder",
+    border_inactive = "TermiteBorderNC",
+    winbar = "TermiteWinbar",
+    tab_active = "TermiteTabActive",
+    tab_inactive = "TermiteTabInactive",
+  }
+
+================================================================================
+5. KEYMAPS                                              *termite-keymaps*
+
+Keymaps are buffer-local and only active in terminal windows.
+Additionally, `toggle` and `create` are available globally in normal mode.
+
+To customize, pass a keymaps table to setup():
+>
+  require("termite").setup({
+    keymaps = {
+      toggle = "<C-\\>",
+      create = "<C-t>",
+      next = "<C-j>",
+      prev = "<C-k>",
+      focus_editor = "<C-e>",
+      normal_mode = "<C-[>",
+      maximize = "<C-z>",
+      close = "q",
+    },
+  })
+<
+
+To disable a keymap, set it to false:
+>
+  require("termite").setup({
+    keymaps = {
+      close = false,  -- Disable 'q' in normal mode
+    },
+  })
+<
+
+Default keymaps:
+
+  Terminal Mode:
+    <C-\\>      Toggle all terminals (smart: focus back)
+    <C-t>       Create new terminal
+    <C-j>       Focus next terminal
+    <C-k>       Focus previous terminal
+    <C-e>       Focus editor window
+    <C-[>       Exit to normal mode
+    <C-z>       Maximize/restore terminal
+
+  Normal Mode (within terminal):
+    q              Close current terminal
+    <LeftRelease>  Enter insert mode on click (when click_to_insert = true)
+
+  Normal Mode (global):
+    <C-\>      Toggle all terminals (smart: focus back)
+    <C-t>       Create new terminal
+
+  Smart toggle: When terminals are visible and you press <C-\> while focus is
+  on the editor, it focuses the terminals instead of hiding them.
+    <C-n>       Focus next terminal
+    <C-p>       Focus previous terminal
+    <C-e>       Focus editor window
+    <C-[>       Exit to normal mode
+    <C-z>       Maximize/restore terminal
+
+================================================================================
+6. COMMANDS                                            *termite-commands*
+
+:Termite [subcommand]                                     *:Termite*
+
+Run termite subcommands. Without a subcommand, defaults to "toggle".
+
+  Subcommands:
+  toggle      Toggle all terminals (smart: focuses terminals if focus is on editor)
+  create      Create a new terminal
+  maximize    Maximize/restore the focused terminal
+  close       Close the focused terminal
+  next        Focus the next terminal in the stack
+  prev        Focus the previous terminal in the stack
+  goto {n}    Jump to terminal n (1-based stack index)
+  reflow      Re-sync window geometry (repairs stale floats)
+  editor      Focus the editor window
+  terminals   Focus the terminal stack (last terminal)
+
+================================================================================
+7. API                                                      *termite-api*
+
+termite.toggle()                                        *termite-toggle()*
+  Toggle all terminals (show/hide). If no terminals exist, creates one.
+  Smart behavior: if terminals are visible and focus is on editor, focuses
+  terminals instead of hiding.
+
+termite.create()                                        *termite-create()*
+  Create a new terminal and add it to the stack.
+
+termite.focus_next()                                    *termite-focus_next()*
+  Focus the next terminal in the stack. Wraps around to first.
+  While maximized, cycles the maximized view instead.
+
+termite.focus_prev()                                    *termite-focus_prev()*
+  Focus the previous terminal in the stack. Wraps around to last.
+  While maximized, cycles the maximized view instead.
+
+termite.focus_index({idx})                              *termite-focus_index()*
+  Focus the terminal at stack index {idx}. While maximized, swaps the
+  maximized view (and updates the tab highlight). Shows hidden terminals
+  first. Used by tab bar mouse clicks, the |:Termite| goto command, and
+  the goto_1 … goto_5 keymaps.
+
+termite.focus_editor()                                  *termite-focus_editor()*
+  Focus the editor window while keeping terminals visible.
+
+termite.focus_terminals()                               *termite-focus_terminals()*
+  Focus the terminal stack (last terminal). Terminals must be visible.
+
+termite.close_current()                                 *termite-close_current()*
+  Close the currently focused terminal and remove it from the stack.
+
+termite.toggle_maximize()                               *termite-toggle_maximize()*
+  Maximize the focused terminal to full height, or restore if already
+  maximized. The maximized terminal keeps only its outer-edge border
+  facing the editor. Hiding (toggle off) remembers the maximized view;
+  toggling back on restores it. While maximized with 2+ terminals,
+  a tab bar is shown (see |termite-config-tabs|).
+
+termite.refresh_maximized()                             *termite-refresh_maximized()*
+  Re-apply maximized geometry and refresh the tab bar.
+  Used after VimResized.
+
+termite.setup({config})
+  Configure the plugin. See |termite-configuration|.
+
+================================================================================
+8. HIGHLIGHTS                                          *termite-highlights*
+
+termite.nvim uses three highlight groups for border colors:
+
+TermiteBorderSingle                                      *hl-TermiteBorderSingle*
+  Applied when there is only one terminal visible.
+  Default: links to |hl-FloatBorder|
+
+TermiteBorder                                            *hl-TermiteBorder*
+  Applied to the straight-line outer edge of the active (focused) terminal
+  when there are 2 or more terminals visible.
+  Corners are not highlighted - only the straight line segment facing the
+  editor.
+  Default: links to |hl-FloatBorder|
+
+TermiteBorderNC                                          *hl-TermiteBorderNC*
+  Applied to inactive terminal borders and all corner characters.
+  Default: links to |hl-Comment|
+
+TermiteWinbar                                            *hl-TermiteWinbar*
+  Applied to the winbar text showing running process or cwd.
+  Default: links to |hl-Normal|
+
+TermiteTabActive                                      *hl-TermiteTabActive*
+  Applied to the selected tab in the maximized tab bar.
+  Default: links to |hl-TabLineSel|
+
+TermiteTabInactive                                    *hl-TermiteTabInactive*
+  Applied to unselected tabs in the maximized tab bar.
+  Default: links to |hl-TabLine|
+
+To customize in your colorscheme: >lua
+  vim.api.nvim_set_hl(0, "TermiteBorderSingle", { fg = "#61afef" })
+  vim.api.nvim_set_hl(0, "TermiteBorder", { fg = "#ff6b6b" })
+  vim.api.nvim_set_hl(0, "TermiteBorderNC", { fg = "#4a4a4a" })
+  vim.api.nvim_set_hl(0, "TermiteWinbar", { fg = "#a0a0a0" })
+<
+Or in setup with highlight group names: >lua
+  require("termite").setup({
+    highlights = {
+      border_single = "MySingleBorder",
+      border_active = "MyActiveBorder",
+      border_inactive = "MyInactiveBorder",
+    },
+  })
+<
+Or define colors directly in setup: >lua
+  require("termite").setup({
+    highlights = {
+      border_single = { fg = "#61afef", bg = "NONE" },
+      border_active = { fg = "#00ff00", bg = "NONE" },
+      border_inactive = { fg = "#ff0000", bg = "NONE" },
+    },
+  })
+<
+
+================================================================================
+vim:tw=78:ts=8:ft=help:norl:
