@@ -1,21 +1,18 @@
+## NeoVim
+
+The [`termite.nvim/`](termite.nvim/) here is a custom version of the plugin [ruicsh/termite.nvim](https://github.com/ruicsh/termite.nvim) that I vibe-coded with Opencode and Gemini to add the features that I needed to make it complete. More info about the features I vibe-coded in [`termite.nvim/README.md`](termite.nvim/README.md).
+
 ## History
 
 2026-04-21: Nobara/KDE
 2026-07-06: Nobara/Sway
-
-- auto-cpufreq
-- btop
-- DAMX
-- Input Remapper
-- zsh
-- fastfetch
-- kitty
+2026-09-03: CachyOS/Niri w DankMaterialShell
 
 ## Sway
 
 Theme: Everforest Hard
 
-- fuzzel
-- swayosd
-- waybar
-- wlsunset
+## Niri
+
+Shell: DankMaterialShell
+

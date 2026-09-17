@@ -1,16 +1,14 @@
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
 alias aespa="fastfetch"
 alias opencodeweb="OPENCODE_SERVER_PASSWORD=240224 opencode web --hostname 0.0.0.0 --port 4096"
 alias codedir="cd ~/Documents/Code"
 alias activatevenv="source .venv/bin/activate"
-alias fixacer="sudo ./Scripts/damx-reinstall.sh"
-alias llm="./Scripts/llm.sh"
+alias fixacer="sudo ~/Scripts/damx-reinstall.sh"
+alias llm="~/Scripts/llm.sh"
 
 alias sync-media="python3 ~/Scripts/sync-media.py"
 
-alias start-jelly='ssh "$PHONE_SSH" "sudo systemctl start jellyfin"'
-alias stop-jelly='ssh "$PHONE_SSH" "sudo systemctl stop jellyfin"'
+alias start-jelly='ssh "heng@192.168.0.124" "sudo systemctl start jellyfin"'
+alias stop-jelly='ssh "heng@192.168.0.124" "sudo systemctl stop jellyfin"'
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
